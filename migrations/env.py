@@ -7,6 +7,7 @@ from alembic import context
 
 from sqlmodel import SQLModel
 from user.schema import UserModel
+from task.schema import TaskModel
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
