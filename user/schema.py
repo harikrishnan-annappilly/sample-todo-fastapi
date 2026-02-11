@@ -14,7 +14,7 @@ class UserInput(PasswordInput):
 
 class UserModel(UserInput, table=True):
     id: Optional[int] = Field(primary_key=True, default=None)
-    created_at: Optional[datetime] = Field(default=datetime.now())
+    created_at: Optional[datetime] = Field(default_factory=datetime.now)
 
     def save(self):
         with get_session() as session:

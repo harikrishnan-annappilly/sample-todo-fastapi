@@ -24,7 +24,7 @@ class TaskInput(SQLModel):
 
 class TaskModel(TaskInput, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
-    created_at: Optional[datetime] = Field(default=datetime.now())
+    created_at: Optional[datetime] = Field(default_factory=datetime.now)
 
     def save(self):
         with get_session() as session:
